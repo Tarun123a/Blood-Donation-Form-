@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8"> 
+    <title>Blood Donation Registration Form </title>
+    
+    <link rel="stylesheet" type="text/css" href="Blood Donation Form .css">
+   
+  
+    
+
+    </head>
+
+    <body>
+      <script>
+                                           // to make sure user enters first name
+ function validfname()
+ {
+   var fn=document.getElementById("fname").value;
+   if(fn.length==0)
+   {
+     document.getElementById("mess1").innerHTML="Please enter a valid name";
+   }
+   else {
+     document.getElementById("mess1").innerHTML="  ";
+   }
+ }
+                                                     //To make sure that the contact number is an exzct 10 digit number
+ function validcontact()
+ {
+ var con=document.getElementById("contact").value;
+ if(isNaN(con) || con.length<10 || con.length>10)
+ {
+   alert("Please enter a valid Contact Nunmber");
+ }
+ } 
+                                            //To display an alert thanking the user for filling the form when he clcik submit button
+ function validbutton()
+ {
+ alert("Thankyou for registering for blood donation. Have a healthy life!");
+ }
+      </script>
+
+<form action="#">
+<h1><q >Donate blood and be the reason for someone's existence.!!</q></h1>
+
+<fieldset id="fset">
+  <h2>DONOR INFORMATION<strong></h2>
+<label for="fname">First Name:</label><br>
+<input id="fname" type="text" onblur="validfname();" autofocus required><span id="mess1"></span><br>
+<label for="lname">Last Name:</label><br>
+<input  id="lname" type="text"  ><br>
+<label for="email">E-mail Id:</label><br>
+<input type="email" name="email" id="email" required> <br>
+<label for="contact">Contact No.:</label><br>
+<input type="number" id="contact" placeholder="1234567890" onblur="validcontact();" maxlength="10" required><br>
+<label for="dob">Date of Birth:</label><br>
+<input id="dob" type="date" name="dob" required><br>
+<hr>
+<label for="state">State:</label><br>
+<input id="state" type="text" name="state" required><br>
+<label for="city">City:</label><br>
+<input id="city" type="text" name="city" required> <br>
+<hr>
+
+<label for="timedonor">Are you a first time donor?</label><br>
+<input type="radio" name="timedonor" value="Yes">Yes<br>
+<input type="radio" name="timedonor" value="No">No<br>
+<label for="last_time">If not, when was the last time you donated blood?</label><br>
+<input id="last_time" type="date" name="last_time"><br>
+<label for="bgroups">Blood Group:</label><br>
+<input list="bgroups" name="bgroup" >
+<datalist id="bgroups">
+
+<option value="A+">
+<option value="O+">
+<option value="B+">
+<option value="AB+">
+<option value="A-">
+<option value="O-">
+<option value="B-">
+<option value="AB-">
+
+</datalist>
+<br>
+<h4>Any medical history that is important to mention?</h4><br>
+<textarea name="med_hist" cols="100" rows="10" title="This field can include any serious medical conditions of your past or present that could hinder your ability to donate blood and we should be aware of."> </textarea><br>
+
+
+<input  type="submit" onclick="validbutton();" value="Submit" >
+</fieldset>
+
+
+
+
+
+  </form>
+  
+  </body>
+  </html>
